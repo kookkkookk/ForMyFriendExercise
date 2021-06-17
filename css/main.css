@@ -1,0 +1,379 @@
+@charset "utf-8";
+@import url("reset.css");
+/* CSS Document */
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family:"Microsoft JhengHei", "PMingLiU", "Arial Unicode MS";
+	/*background-color: #000;*/
+	position: relative;
+}
+#loading{
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: #444;
+	text-align: center;
+	z-index: 30;
+}
+#loading img{
+	margin-top: 15%;	
+}
+#main{
+	width: 1280px;
+	height: 720px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+header{
+	width: 100%;
+	height: 40px;
+	/*background-image: url("../images/indexMenu.jpg");*/
+	/*background-repeat: no-repeat;*/
+	background-color: #3e3a39;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 21;
+}
+header #menuLogo{
+	width: 118px;
+	height: 40px;
+	cursor: pointer;
+}
+header>ul{
+	position: absolute;
+	top: 0px;
+	right: 35px;
+}
+header>ul>li{
+	width: 110px;
+	height: 40px;
+	float: left;
+	/*margin-left: 8px;*/
+	cursor: pointer;
+	/*background-position: center;*/
+	font-size: 16px;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	/*background-color: #777;*/
+	transition:0.5s all ease;
+}
+header>ul>li:hover{color: #b0a800;}
+#nobtn{
+	width: 1px;
+	height: auto;
+	color: #939393;
+	/*background-color: #939393;*/
+	/*margin-top: 12.5px;*/
+}
+#sbtn1{
+	height: 92px;
+	left: 0px;
+	display: none;
+}
+#sbtn2{
+	height: 123px;
+	height: 92px;
+	left: 111px;
+	display: none;
+}
+#sbtn3{
+	/*height: 92px;*/
+	height: 61px;
+	left: 222px;
+	display: none;
+}
+#sbtn4{
+	height: 61px;
+	left: 333px;
+	display: none;
+}
+.sbtnUl{
+	width: 110px;
+	position: absolute;
+	top: 40px;
+	background: #272424; /* Old browsers */
+	background: -moz-linear-gradient(top, #272424 0%, #45403f 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #272424 0%,#45403f 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #272424 0%,#45403f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272424', endColorstr='#45403f',GradientType=0 ); /* IE6-9 */
+}
+.sbtn{
+	margin: 0px;
+	width: 95px;
+	height: 30px;
+	/*background-image: url("../images/sBtnBg.jpg");*/
+	/*background-color: #789;*/
+	margin: 0 auto;
+	border-top: 1px solid #535353;
+	/*background-position: left;*/
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+	letter-spacing: 0.1em;
+	transition:0.3s all ease;
+}
+.sbtn:nth-child(1){border: none;}
+.sbtn:hover{color: #b0a800;}
+/*縮小用*/
+#smallBtn{display: none;}
+#smallBtnClose{display: none;}
+
+footer{
+	width: 100%;
+	height: 40px;
+	background-color: #313131;
+	position: absolute;
+	bottom: 0px;
+	left: 0px; 
+	z-index: 18;
+}
+footer #desc{
+	width: 950px;
+	height: 40px;
+	/*background-color: #888;*/
+	font-weight: lighter;
+	font-size: 16px;
+	color: #dcdcdc;
+	/*margin-left: 25%;*/
+	line-height: 35px;
+	position: absolute;
+	bottom: 0px;
+	left: 3%; 
+}
+footer #desc>a{
+	width: auto;
+	height: 40px;
+	/*background-color: blue;*/
+	/*font-weight: bold;*/
+	letter-spacing: 0.01em;
+	text-decoration: none;
+	font-size: 22px;
+	color: #b0a800;
+	/*position: absolute;
+	top: -3.5px;
+	right: 0px;*/
+}
+footer #desc>a:hover{
+	color: red;
+}
+footer #desc>span{
+	width: auto;
+	height: 40px;
+	letter-spacing: 0.01em;
+	font-size: 20px;
+	color: #b0a800;
+	cursor: pointer;
+}
+footer #desc>span:hover{
+	color: red;
+}
+
+#mapPic{
+	position: absolute;
+	bottom: -315px;
+	right: 410px;
+	/*display: none;*/
+	z-index: 17;
+}
+.mapOffBox{
+	width: 40px;
+	height: 40px;
+	/*opacity: 0.3;*/
+	/*background-color: red;*/
+	border-radius: 30px;
+	border: 1px solid #3f3a39;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	cursor: pointer;
+}
+.mapOffLine1{
+	width: 25px;
+	height: 1px;
+	background-color: #3f3a39;
+	position: absolute;
+	top: 20px;
+	left: 8px;
+	transform: rotate(45deg);
+	transition:0.2s all ease;
+}
+.mapOffLine2{
+	width: 25px;
+	height: 1px;
+	background-color: #3f3a39;
+	position: absolute;
+	top: 20px;
+	left: 8px;
+	transform: rotate(-45deg);
+	transition:0.2s all ease;
+}
+.mapOffBox:hover .mapOffLine1{
+	transform: rotate(225deg);
+}
+.mapOffBox:hover .mapOffLine2{
+	transform: rotate(135deg);
+}
+.sectionSpace{
+	width: 100%;
+	height: 0px;
+	/*background-color: red;*/
+}
+
+@media screen and (max-width: 736px) {
+	body,html {
+		line-height:0;
+		/*background-color: #000;*/
+	}
+	#main {	
+		width:100%;	
+		height:100%;
+		overflow:visible;
+		min-width:320px;
+		background-position:left top;
+	}
+	header {
+		border-bottom: 1px solid #222;
+		position: fixed;
+	}
+	header>ul{
+		display: none;
+	}
+	#smallBtn{
+		display: block;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		position: absolute;
+		top: 0px;
+		right: 10px;
+		/*background-color: #951;*/
+	}
+	/*---MenuBtn上的三條Line---*/
+	#smallBtnLine1{
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		position: absolute;
+		top: 12px;
+		left: 5px;
+		transition:0.3s all ease;
+	}
+	#smallBtnLine2{
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		position: absolute;
+		top: 20px;
+		left: 5px;
+	}
+	#smallBtnLine3{
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		position: absolute;
+		top: 28px;
+		left: 5px;
+		transition:0.3s all ease;
+	}
+	#smallMenu{
+		width: 85%;
+		height: 100%;
+		/*background-color: #111;*/
+		background-image: url("../images/menuSmallBg.png");
+		/*display: none;*/
+		/*z-index: 20;*/
+		z-index: 17;
+		position: fixed;
+		top: 40px;
+		right: -85%;
+	}
+	#smallMenu>ul{
+		width: 100%;
+		height: auto;
+	}
+	#smallMenu>ul>li{
+		width: 100%;
+		height: auto;
+		background-color: #666;
+		border-bottom: 1px solid #000;
+
+		font-size: 16px;
+		line-height: 50px;
+		font-weight: bold;
+		color: #fff;
+		text-indent: 20px;
+		cursor: pointer;
+	}
+	.smallbtn{
+		width: 100%;
+		height: 40px;
+		background-color: #222;
+		border-bottom: 1px solid #ccc;
+		font-size: 14px;
+		line-height: 40px;
+		text-indent: 40px;
+	}
+	#smallbtn1 ul,
+	#smallbtn2 ul,
+	#smallbtn3 ul,
+	#smallbtn4 ul{display: none;}
+
+	#smallbtn1 ul li:nth-last-child(1),
+	#smallbtn2 ul li:nth-last-child(1),
+	#smallbtn3 ul li:nth-last-child(1),
+	#smallbtn4 ul li:nth-last-child(1){border:none;}
+
+
+
+
+	footer{
+		position: relative;
+		bottom: 0px;
+		left: 0px;
+		height: 90px;
+		border-top: 1px solid #222;
+	}
+	footer #desc{
+		width: 90%;
+		height: 50px;
+		/*background-color: #888;*/
+		font-size: 14px;
+		position: static;
+		line-height: 1.6em;
+		margin: 10px 0 0 22px;
+	}
+	footer #desc>a{
+		font-size: 16px;
+	}
+	footer #desc>span{
+		font-size: 16px;
+	}
+
+	#mapPic{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+		/*background-color: #000;*/
+		display: none;
+		background-image: url("../images/menuSmallBg.png");
+		z-index: 19;
+	}
+	#mapPic img{
+		position: absolute;
+		top: 40px;
+	}
+	.mapOffBox{
+		display: none;
+	}
+}

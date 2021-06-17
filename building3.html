@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0" />
+<meta charset="utf-8" />
+<title>直心巷</title>
+<meta name="keywords" content="直心巷">
+<meta name="description" content="手作建築 國際(俬)別墅│120-150坪│豐田路255巷1號│訂房專線:03-365-3650">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script src="js/jquery-ui-1.11.4.min.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery-ui-touch-punch.min.js"></script>
+<script src="js/mdetect-1021119.js"></script>
+<script src="js/main.js"></script>
+
+<link rel="shortcut icon" href="images/icon.ico" />
+<link href="css/main.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('figure');
+document.createElement('aside');
+document.createElement('footer');
+document.createElement('hgroup');
+</script>
+<![endif]-->
+<style>
+section{
+	width: 100%;
+	height: 100%;
+	background-color: #555;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.bgWhite{
+	width: 100%;
+	height: 100%;
+	background-image: url("images/0_bg.jpg");
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 5;
+}
+.bannerBox{
+	width:100%;
+	height: auto;
+	position:relative;
+}
+.leftMask{
+	width: 255px;
+	height: 720px;
+	background-image: url("images/01-3_bannerLeftMask.jpg");
+	position: absolute;
+	top: 0px;
+	left: -255px;
+	z-index: 14;
+}
+.leftMaskTxt{
+	width: 255px;
+	height: 720px;
+	background-image: url("images/02-3_bannerLeftMaskTxt.png");
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 16;
+	display:none;
+}
+#slideBtn {
+	width: 100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	position:absolute;
+	text-align:center;
+	/*top:88.2%;*/
+	bottom: 40px;
+	left:0px;
+	z-index: 15;
+	background-color: #313131;
+	margin: 0 auto;
+}
+#slideBtn ul{
+	margin: 0 auto;
+}
+#slideBtn li {
+	width: 106px;
+	height: 58px;
+	background-color: #313131;
+	cursor:pointer; 
+	margin-right: 7px;
+	border: 1px solid #929292;
+	display: inline-block;
+	opacity: 0.6;
+	/*transition:0.3s all ease;*/
+}
+#slideBtn li img{
+	width: 106px;
+	height: 58px;
+}
+#slideBtn li.active {
+	transform-origin: 50% 50%;
+	transform: scale(1.15);
+	border: 2px solid #b0a800;
+	opacity: 1;
+}
+.bgMask{
+	max-width: 100%;
+	height: auto;
+	opacity: 0;
+	font-size:0;
+}
+#banner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 14;
+	/*background-color:#8e52dd;*/
+}
+.bannerTxt{
+	/*background-color:#7e2;*/
+	position: absolute;
+	top: 180px;
+	left: -205px;
+	z-index: 15;
+}
+.bannerTxt p{
+	color: #8b8623;
+	font-size: 16px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.bannerClass{
+	width: 1025px;
+	height: 566px;
+	position: absolute;
+	top: 40px;
+	left: 255px;
+	/*background-color: #ebebeb;*/
+	/*overflow: hidden;*/
+	background-image: url("images/0_bg.jpg");
+}
+.bannerClass ul{
+	width: 9999px;
+	position: absolute;
+	background-color: #ebebeb;
+}
+.bannerClass ul li {
+	width: 875px;
+	height: 566px;
+	float: left;
+	margin-right: 5px;
+
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+.bannerClass ul li:nth-last-child(1) {margin: 0px;}
+#banner2,#banner3,#banner4,#banner5,#banner6{
+	display: none;
+}
+#banner1{
+	width: 1280px;
+	height: 720px;
+	top: 40px;
+	left: 0px;
+	background-image: url("images/02-3_bigPic1.jpg");
+}
+.bannerTxtBnner1{
+	display:none;
+}
+
+
+.space{	display:none;}
+@media screen and (max-width: 736px) {
+	section{
+		/*max-width:320px;*/
+		height: auto;
+		background-color: #f9f9f9;
+		padding-top:40px;
+	}
+	.bgWhite{display: none;}
+	.bannerBox{
+		position:static;
+		overflow: hidden;
+	}
+	.bgMask{
+		max-width: 110%;
+		width: 110%;
+	}
+	.bg{
+		margin-top: 40px;
+	}
+	.leftMask,.leftMaskTxt,#slideBtn{display: none;}
+	.bannerTxt{
+		position: static;
+		width: 95%;
+		text-align: left;
+		margin: 20px 0 0 15px;
+	}
+	.bannerTxt p{
+		font-size: 15px;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+	.bannerClass{
+		width: 100%;
+		height: 100%;
+		position: static;
+		padding-bottom: 120px;
+		border-bottom: 3px solid #b0a800;
+	}
+	#banner1{
+		width: 100%;
+		height: 100%;
+		position: static;
+		background-size: cover;	
+		background-position: 90% 0%;
+		border: none;
+		background-image: url("images/02-3_bigPic1_Phone.jpg");
+	}
+	.bannerTxtBnner1{
+		display:block;
+		width: 95%;
+		background-image: url("images/0_bg.jpg");
+		padding-top: 10px;
+		padding-left: 5%;
+		border-bottom: 3px solid #b0a800;	
+	}
+	.bannerTxtBnner1 h1{
+		font-size: 18px;
+		color: #75722a;
+		line-height: 25px;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	.bannerTxtBnner1 p{
+		font-size: 15px;
+		color: #1b1b1b;
+		line-height: 20px;
+		font-weight: bold;
+		padding-bottom: 30px;
+	}
+
+
+	.bannerClass:nth-last-child(1){border: none;}
+	.bannerClass ul{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background-color: #ebebeb;
+	}
+	.bannerClass ul li {
+		width: 100%;
+		height: 100%;
+		float: none;
+		margin: 0px;
+		position:absolute;
+		top: 0px;
+		left: 0px;
+	}
+	#banner2,#banner3,#banner4,#banner5,#banner6{
+		display: block;
+	}
+
+
+	#space{
+		width: 100%;
+		height: 50px;
+		display: block;
+	}
+}
+</style>
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+<div id="loading"><img src="images/loading.gif"></div>
+<div id="main">
+	<!-- MENU上 -->
+	<header>
+		<div id="menuLogo" title="回首頁"><img src="images/indexMenuLogo.png" width="100%"></div>
+		<ul>
+			<li id="btn1">直心八德
+				<ul id="sbtn1" class="sbtnUl">
+					<li id="btn1-1" class="sbtn">墅的發生</li>
+					<li id="btn1-2" class="sbtn">神隱交通</li>
+					<li id="btn1-3" class="sbtn">生活片段</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn2">植心建築
+				<ul id="sbtn2" class="sbtnUl">
+					<li id="btn2-1" class="sbtn">張景堯築跡</li>
+					<li id="btn2-2" class="sbtn">群祥藝術家</li>
+					<li id="btn2-3" class="sbtn">國際俬別墅</li>
+					<!-- <li id="btn2-4" class="sbtn">反璞歸真趣</li> -->
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn3">質心空間
+				<ul id="sbtn3" class="sbtnUl">
+					<!-- <li id="btn3-1" class="sbtn">有故事的家</li> -->
+					<li id="btn3-2" class="sbtn">內在的風景</li>
+					<li id="btn3-3" class="sbtn">智慧型建築</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn4">預約賞屋
+				<!-- <ul id="sbtn4" class="sbtnUl">
+					<li id="btn4-1" class="sbtn">線上預約</li>
+					<li id="btn4-2" class="sbtn">交通位置圖</li>
+				</ul> -->
+			</li>
+		</ul>
+		<div id="smallBtn">
+			<div id="smallBtnLine1"></div>
+			<div id="smallBtnLine2"></div>
+			<div id="smallBtnLine3"></div>
+		</div>
+	</header>
+	<div id="smallMenu">
+		<ul>
+
+			<li id="smallbtn1" class="smallbtn">直心八德
+				<ul>
+					<li id="smallbtn1-1" class="smallbtn">墅的發生</li>
+					<li id="smallbtn1-2" class="smallbtn">神隱交通</li>
+					<li id="smallbtn1-3" class="smallbtn">生活片段</li>
+				</ul>
+			</li>
+
+			<li id="smallbtn2" class="smallbtn">植心建築
+				<ul>
+					<li id="smallbtn2-1" class="smallbtn">張景堯築跡</li>
+					<li id="smallbtn2-2" class="smallbtn">群祥藝術家</li>
+					<li id="smallbtn2-3" class="smallbtn">國際俬別墅</li>
+					<!-- <li id="smallbtn2-4" class="smallbtn">反璞歸真趣</li> -->
+				</ul>
+			</li>
+
+			<li id="smallbtn3" class="smallbtn">質心空間
+				<ul>
+					<!-- <li id="smallbtn3-1" class="smallbtn">有故事的家</li> -->
+					<li id="smallbtn3-2" class="smallbtn">內在的風景</li>
+					<li id="smallbtn3-3" class="smallbtn">智慧型建築</li>
+				</ul>
+			</li>
+
+			<li id="smallbtn4" class="smallbtn">預約賞屋
+				<!-- <ul>
+					<li id="smallbtn4-1" class="smallbtn">線上預約</li>
+					<li id="smallbtn4-2" class="smallbtn">交通位置圖</li>
+				</ul> -->
+			</li>
+
+		</ul>
+	</div>
+
+	<!-- 內容 -->
+	<section>
+		<div class="bgWhite"></div>
+		<div class="bannerBox">
+			<div class="leftMaskTxt"></div>
+
+			<div id="banner" class="bg">
+				<div id="banner1" class="bannerClass bannerSpecial">
+					<!-- <ul>
+						<li src="images/01-3_banner1-1.jpg"></li>
+						<li src="images/01-3_banner1-2.jpg"></li>
+					</ul>
+					<div class="leftMask"></div>
+					<div class="bannerTxt">
+						<p>外觀內斂斜屋頂</p>
+						<p>現代極簡</p>
+						<p>層層錯錯的隱謐院落</p>
+					</div> -->
+					
+				</div>
+				<div class="bannerTxtBnner1">
+						<h1>當代國際VILLA  品味不用翻譯</h1>
+						<p>揉合中西頂尖精隨，同步當今國際別墅的居住趨勢，美國賓大建築師量心操刀，好的住宅品味不喊高分貝，當別墅的獨有樣貌自己說話,還沒走進來，就已被說服。</p>
+					</div>
+				<div id="banner2" class="bannerClass">
+					<ul>
+						<li src="images/02-3_banner1-1.jpg"></li>
+						<li src="images/02-3_banner1-2.jpg"></li>
+					</ul>
+					<div class="leftMask"></div>
+					<div class="bannerTxt">
+						<p>外觀內斂斜屋頂</p>
+						<p>現代極簡</p>
+						<p>層層錯錯的隱謐院落</p>
+					</div>
+				</div>
+				<div id="banner3" class="bannerClass">
+					<ul>
+						<li src="images/02-3_banner2-1.jpg"></li>
+						<li src="images/02-3_banner2-2.jpg"></li>
+					</ul>
+					<div class="leftMask"></div>
+					<div class="bannerTxt">
+						<p>匠心手鑿的素質牆面</p>
+						<p>撫觸手作才有的溫度</p>
+					</div>
+				</div>
+				<div id="banner4" class="bannerClass">
+					<ul>
+						<li src="images/02-3_banner3-1.jpg"></li>
+						<li src="images/02-3_banner3-2.jpg"></li>
+					</ul>
+					<div class="leftMask"></div>
+					<div class="bannerTxt">
+						<p>具穿透感的格柵</p>
+						<p>開放卻隱密</p>
+						<p>把自己藏起來，再打開</p>
+					</div>
+				</div>
+				<div id="banner5" class="bannerClass">
+					<ul>
+						<li src="images/02-3_banner4-1.jpg"></li>
+						<li src="images/02-3_banner4-2.jpg"></li>
+					</ul>
+					<div class="leftMask"></div>
+					<div class="bannerTxt">
+						<p>陽台、露台…</p>
+						<p>內外無界</p>
+						<p>一座真正會呼吸</p>
+						<p>的當代別墅</p>
+					</div>
+				</div>
+				<div id="banner6" class="bannerClass">
+					<ul>
+						<li src="images/02-3_banner5-1.jpg"></li>
+						<li src="images/02-3_banner5-2.jpg"></li>
+					</ul>
+					<div class="leftMask"></div>
+					<div class="bannerTxt">
+						<p>人車分道</p>
+						<p>全齡自然中庭</p>
+						<p>車道讓開，人走進來</p>
+						<p>一巷濃綠留給你</p>
+						<p>逛不膩的中庭</p>
+						<p>看不膩的風景</p>
+						<p>順著心走</p>
+					</div>
+				</div>
+			</div>
+			<div class="bgMask"><img src="images/0_bg.jpg" width="100%"></div>
+			<!-- <div id="space"></div> -->
+			<div id="slideBtn">
+				<ul>
+				    <li class="active"><img src="images/02-3_smallPic1.jpg" width="100%"></li>
+				    <li><img src="images/02-3_smallPic2.jpg" width="100%"></li>
+				    <li><img src="images/02-3_smallPic3.jpg" width="100%"></li>
+				    <li><img src="images/02-3_smallPic4.jpg" width="100%"></li>
+				    <li><img src="images/02-3_smallPic5.jpg" width="100%"></li>
+			    </ul>
+		    </div>
+		</div>
+	</section>
+	<div class="sectionSpace"></div>
+
+	<!-- MENU下 -->
+	<footer>
+		<div id="desc">手作建築 國際別墅 │ 120-150坪 │ 預約專線 <a href="tel:03-365-3650" target="_blank">03-365-3650</a> │ 豐田路225巷1號 │ <span id="mapOpen">MAP</span></div>
+	</footer>
+	<div id="mapPic">
+		<img src="images/mapPic.png" width="100%">
+		<div class="mapOffBox">
+			<div class="mapOffLine1"></div>
+			<div class="mapOffLine2"></div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+
+//li自己抓圖片
+$(".bannerClass li").each(function(){
+	$(this).css({"background-image":"url('" + $(this).attr("src") + "')"});			
+});
+
+var WinWidth = $("section").innerWidth();
+if(WinWidth == 1280){
+
+	var idx = 1;
+	var j_block = $('#banner'+idx);
+
+	var startMove = function(idx){
+
+		j_block = $('#banner' + idx);
+		var j_ul = j_block.find('ul');
+		var j_li = j_ul.find('li');
+		var width = j_block.outerWidth();
+		var j_liWidth = j_li.outerWidth(true);
+		var screenDifference = width - (j_liWidth-4);
+		var MIN_X = j_liWidth * (j_li.length - 1) - screenDifference;
+		var SPEED = 1500;
+		// 設定 j_ul 的 width
+		j_ul.width(j_liWidth * j_li.length);
+			
+		// 當滑鼠在 j_block 上移動時
+
+		j_block.mousemove(function(e){
+			var realPosition = e.pageX - ($(this).offset().left);
+			var percent = realPosition / width;
+			var dis = Math.floor( (percent * -MIN_X) );
+			// 移動 j_ul
+			// j_ul.css({'left':dis});
+			j_ul.stop(false, true).animate({			
+				left:dis
+			}, SPEED);
+
+		});
+	}
+	startMove(idx);
+
+	//click
+	$("#slideBtn li").on("click",function(){
+
+		j_block.unbind('mousemove');
+		idx = $(this).index()+1;
+		startMove(idx);
+		// j_block = $('#banner' + idx);
+		// console.log("j_block:",j_block);
+		$(".bannerClass").fadeOut(500).eq((idx)-1).fadeIn(500);
+		$("#slideBtn li").removeClass("active").eq((idx)-1).addClass("active");
+		if(idx==1){
+			$(".leftMaskTxt").fadeOut(500);
+		}else{
+			$(".leftMaskTxt").fadeIn(500);
+		}
+	});
+}else{
+	
+	var TT=0;
+	function fixedPosition(){
+		var conteneHeight = $("#banner1").outerHeight(true);
+		var sectionSpace = $("section").innerHeight();
+		var bannerTxtBnner = $(".bannerTxtBnner1").outerHeight(true);
+		$(".sectionSpace").css({"height":((conteneHeight * 6)+bannerTxtBnner)+40});
+		TT=setTimeout(fixedPosition,300);
+		// console.log(TT);
+		if(TT>=12){
+			clearTimeout(TT);
+		}
+	}
+	fixedPosition();
+	$("#banner1 ul").find('li').eq(1).not().hide();
+	$("#banner2 ul").find('li').eq(1).not().hide();
+	$("#banner3 ul").find('li').eq(1).not().hide();
+	$("#banner4 ul").find('li').eq(1).not().hide();
+	$("#banner5 ul").find('li').eq(1).not().hide();
+
+	$("#banner6 .bannerTxt>p").html("");
+	$("#banner6 .bannerTxt").find("p").eq(0).html("人車分道 全齡自然中庭");
+	$("#banner6 .bannerTxt").find("p").eq(1).html("車道讓開，人走進來");
+	$("#banner6 .bannerTxt").find("p").eq(2).html("一巷濃綠留給你 逛不膩的中庭");
+	$("#banner6 .bannerTxt").find("p").eq(3).html("看不膩的風景 順著心走");
+
+}
+
+});
+$(window).resize(function(){
+	var conteneHeight = $("#banner1").outerHeight(true);
+	var sectionSpace = $("section").innerHeight();
+	var bannerTxtBnner = $(".bannerTxtBnner1").outerHeight(true);
+	$(".sectionSpace").css({"height":((conteneHeight * 6)+bannerTxtBnner)+40});
+});
+</script>
+</body>
+</html>

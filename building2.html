@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0" />
+<meta charset="utf-8" />
+<title>直心巷</title>
+<meta name="keywords" content="直心巷">
+<meta name="description" content="手作建築 國際(俬)別墅│120-150坪│豐田路255巷1號│訂房專線:03-365-3650">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script src="js/jquery-ui-1.11.4.min.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery-ui-touch-punch.min.js"></script>
+<!-- <script src="js/mdetect-1021119.js"></script> -->
+<script src="js/main.js"></script>
+
+<link rel="shortcut icon" href="images/icon.ico" />
+<link href="css/main.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('figure');
+document.createElement('aside');
+document.createElement('footer');
+document.createElement('hgroup');
+</script>
+<![endif]-->
+<style>
+section{
+	width: 100%;
+	height: 100%;
+	background-color: #555;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#BgAll{
+	width: 2560px;
+	height: 720px;
+	position: relative;
+}
+#arrowL{
+	width: 65px;
+	height: 40px;
+	background-image: url("images/arrowL.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #8b8623;
+	position: absolute;
+	bottom: 100px;
+	left: 0px;
+	cursor: pointer;
+	transition:0.3s all ease;
+	z-index: 4;
+}
+#arrowR{
+	width: 65px;
+	height: 40px;
+	background-image: url("images/arrowR.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #8b8623;
+	position: absolute;
+	bottom: 100px;
+	right: 0px;
+	cursor: pointer;
+	transition:0.3s all ease;
+	z-index: 4;
+}
+#arrowL:hover{background-color: #333;background-position:20%;}
+#arrowR:hover{background-color: #333;background-position:80%;}
+#page1{
+	width: 1280px;
+	height: 720px;
+	/*background-color: red;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#page2{
+	width: 1280px;
+	height: 720px;
+	/*background-color: orange;*/
+	position: absolute;
+	top: 0px;
+	left: 1280px;
+}
+#page3{
+	width: 1280px;
+	height: 720px;
+	/*background-color: orange;*/
+	position: absolute;
+	top: 0px;
+	left: 2560px;
+}
+#page4{
+	width: 1280px;
+	height: 720px;
+	/*background-color: orange;*/
+	position: absolute;
+	top: 0px;
+	left: 3840px;
+}
+#page1PhoneBg, #page2PhoneBg, #page3PhoneBg, #page4PhoneBg{display: none;}
+/*---------------Page1----------------*/
+p{
+	font-size: 16px;
+	font-weight: bold;
+	color: #1b1b1b;
+}
+h2, h3{
+	font-size: 22px;
+	font-weight: bold;
+	color: #75722a;
+}
+#page1 h2{
+	position: absolute;
+	top: 253px;
+	left: 499px;
+}
+#page1 p{
+	width: 595px;
+	position: absolute;
+	top: 288px;
+	left: 337px;
+	line-height: 26px;
+	/*background-color: #951;*/
+	text-align: center;
+}
+
+/*---------------Page2----------------*/
+#page2 h2{
+	position: absolute;
+	top: 213px;
+	left: 510px;
+}
+#page2 p{
+	width: 400px;
+	line-height: 26px;
+	position: absolute;
+	top: 260px;
+	left: 436px;
+	/*background-color: #951;*/
+	text-align: center;
+}
+#barPicAll{
+	width: 760px;
+	height: 97px;
+	position: absolute;
+	top: 425px;
+	left: 227px;
+	/*background-color: #753;*/
+}
+.barbtnClass {
+	display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.barbtnClass:nth-child(5){margin-right: 0px;}
+.barbtnClass img{border: 2px solid #c3c3c3;transition:0.4s all ease;}
+.barbtnClass:hover img{border: 2px solid #8b8623;}
+h5{
+	font-size: 14px;
+	/*font-weight: bold;*/
+	color: #1b1b1b;
+	text-align: right;
+	margin-top: 3px;
+}
+#openPic {
+    /*開圖區*/
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: none;
+    z-index: 5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#openPicInside {
+    width: 100%;
+    height: auto;
+}
+/*---------------Page3---------------*/
+#page3 h2{
+	position: absolute;
+	top: 197px;
+	left: 131px;
+}
+#page3 p{
+	/*width: 595px;*/
+	position: absolute;
+	top: 236px;
+	left: 131px;
+	line-height: 26px;
+	/*background-color: #951;*/
+}
+#page3 h3{
+	font-size: 16px;
+	color: #75722a;
+	position: absolute;
+	top: 430px;
+	left: 200px;
+}
+#page3 h3 span{
+	font-size: 22px;
+}
+#page3 .h3Id{
+	width: 328px;
+	height: 74px;
+	position: absolute;
+	top: 449px;
+	left: 278px;
+}
+/*---------------Page4---------------*/
+#page4 p{
+	/*width: 595px;*/
+	position: absolute;
+	top: 342px;
+	left: 169px;
+	line-height: 26px;
+	/*background-color: #951;*/
+}
+#page4 h3{
+	font-size: 16px;
+	color: #75722a;
+	position: absolute;
+	top: 241px;
+	left: 168px;
+}
+#page4 h3 span{
+	font-size: 22px;
+}
+#page4 .h3Id{
+	width: 328px;
+	height: 74px;
+	position: absolute;
+	top: 268px;
+	left: 218px;
+}
+
+
+#space{display: none;}
+.sectionSpace{display: none;}
+
+@media screen and (max-width: 736px) {
+	section{
+		min-width:320px;
+		height: auto;
+		background-color: #f9f9f9;
+		background-image: url("images/0_bg.jpg");
+	}
+	.sectionSpace{display: block;}
+	#BgAll{
+		width: 100%;
+		height: auto;
+		position:static;
+		padding-top: 40px;
+	}
+	#page1, #page2, #page3, #page4{
+		width: 100%;
+		height: auto;
+		position: static;
+		margin-top: 30px;
+	}
+	#arrowR,#arrowL{display: none;}
+	#page1PCBg{display: none;}
+	#page1PhoneBg{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	p{
+		font-size: 12px;
+	}
+	h2, h3{
+		font-size: 14px;
+	}
+	/*---------------Page1-m----------------*/
+	#page1 h2{
+		position: static;
+		width: 95%;
+		height: auto;
+		margin: 20px 0 0 15px;
+	}
+	#page1 p{
+		position: static;
+		width: 95%;
+		height: auto;
+		margin: 20px 0 0 15px;
+		text-align: left;
+	}
+	/*---------------Page2-m----------------*/
+	#page2 h2{
+		position: static;
+		width: 95%;
+		height: auto;
+		margin: 20px 0 0 15px;
+	}
+	#page2 p{
+		position: static;
+		width: 95%;
+		height: auto;
+		margin: 20px 0 0 15px;
+		text-align: left;
+	}
+	#barPicAll{
+		width: 100%;
+		height: auto;
+		position: static;
+		text-align: center;
+		margin-top: 20px;
+	}
+	.barbtnClass {
+		margin: 4px;
+	}
+	h5{
+		font-size: 10px;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+	#openPic {
+		background-image: url("images/menuSmallBg.png");
+		position: fixed;
+		top: 40px;
+	}
+	#openPicInside {
+		width: 100%;
+		/*margin: 15px 15% 0 15%;*/
+		margin-top: 15px;
+	}
+	/*---------------Page3-m----------------*/
+	#page3 h2{
+		position: static;
+		width: 95%;
+		height: auto;
+		margin: 20px 0 0 15px;
+	}
+	#page3 p{
+		position: static;
+		width: 95%;
+		height: auto;
+		margin: 20px 0 0 15px;
+		text-align: left;
+	}
+	#page3 h3{
+		font-size: 12px;
+		position: static;
+		width: 95%;
+		margin: 20px 0 0 15px;
+		text-align: left;
+	}
+	#page3 h3 span{
+		font-size: 12px;
+	}
+	#page3 .h3Id{
+		width: 70%;
+		height: auto;
+		position: static;
+		margin: 10px 0 0 15px;
+	}
+	/*---------------Page4-m----------------*/
+	#page4 p{
+		position: static;
+		width: 95%;
+		height: auto;
+		margin: 10px 0 0 15px;
+		text-align: left;
+	}
+	#page4 h3{
+		font-size: 12px;
+		position: static;
+		width: 95%;
+		margin: 20px 0 0 15px;
+		text-align: left;
+	}
+	#page4 h3 span{
+		font-size: 12px;
+	}
+	#page4 .h3Id{
+		width: 70%;
+		height: auto;
+		position: static;
+		margin: 10px 0 0 15px;
+	}
+
+	@media screen and (orientation: landscape) {
+		/*手機橫*/
+		#openPicInside {
+			margin-top: -20px;
+		}
+	}
+	#space{
+		width: 100%;
+		height: 50px;
+		display: block;
+	}
+}
+</style>
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+<div id="loading"><img src="images/loading.gif"></div>
+<div id="main">
+	<!-- MENU上 -->
+	<header>
+		<div id="menuLogo" title="回首頁"><img src="images/indexMenuLogo.png" width="100%"></div>
+		<ul>
+			<li id="btn1">直心八德
+				<ul id="sbtn1" class="sbtnUl">
+					<li id="btn1-1" class="sbtn">墅的發生</li>
+					<li id="btn1-2" class="sbtn">神隱交通</li>
+					<li id="btn1-3" class="sbtn">生活片段</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn2">植心建築
+				<ul id="sbtn2" class="sbtnUl">
+					<li id="btn2-1" class="sbtn">張景堯築跡</li>
+					<li id="btn2-2" class="sbtn">群祥藝術家</li>
+					<li id="btn2-3" class="sbtn">國際俬別墅</li>
+					<!-- <li id="btn2-4" class="sbtn">反璞歸真趣</li> -->
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn3">質心空間
+				<ul id="sbtn3" class="sbtnUl">
+					<!-- <li id="btn3-1" class="sbtn">有故事的家</li> -->
+					<li id="btn3-2" class="sbtn">內在的風景</li>
+					<li id="btn3-3" class="sbtn">智慧型建築</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn4">預約賞屋
+				<!-- <ul id="sbtn4" class="sbtnUl">
+					<li id="btn4-1" class="sbtn">線上預約</li>
+					<li id="btn4-2" class="sbtn">交通位置圖</li>
+				</ul> -->
+			</li>
+		</ul>
+		<div id="smallBtn">
+			<div id="smallBtnLine1"></div>
+			<div id="smallBtnLine2"></div>
+			<div id="smallBtnLine3"></div>
+		</div>
+	</header>
+	<div id="smallMenu">
+		<ul>
+
+			<li id="smallbtn1" class="smallbtn">直心八德
+				<ul>
+					<li id="smallbtn1-1" class="smallbtn">墅的發生</li>
+					<li id="smallbtn1-2" class="smallbtn">神隱交通</li>
+					<li id="smallbtn1-3" class="smallbtn">生活片段</li>
+				</ul>
+			</li>
+
+			<li id="smallbtn2" class="smallbtn">植心建築
+				<ul>
+					<li id="smallbtn2-1" class="smallbtn">張景堯築跡</li>
+					<li id="smallbtn2-2" class="smallbtn">群祥藝術家</li>
+					<li id="smallbtn2-3" class="smallbtn">國際俬別墅</li>
+					<!-- <li id="smallbtn2-4" class="smallbtn">反璞歸真趣</li> -->
+				</ul>
+			</li>
+
+			<li id="smallbtn3" class="smallbtn">質心空間
+				<ul>
+					<!-- <li id="smallbtn3-1" class="smallbtn">有故事的家</li> -->
+					<li id="smallbtn3-2" class="smallbtn">內在的風景</li>
+					<li id="smallbtn3-3" class="smallbtn">智慧型建築</li>
+				</ul>
+			</li>
+
+			<li id="smallbtn4" class="smallbtn">預約賞屋
+				<!-- <ul>
+					<li id="smallbtn4-1" class="smallbtn">線上預約</li>
+					<li id="smallbtn4-2" class="smallbtn">交通位置圖</li>
+				</ul> -->
+			</li>
+
+		</ul>
+	</div>
+
+	<!-- 內容 -->
+	<section>
+		<div id="arrowL"></div>
+		<div id="arrowR"></div>
+		<div id="BgAll">
+			 <div id="page1">
+				<div id="page1PCBg"><img src="images/02-2_page1PC.jpg" width="100%"></div>
+				<div id="page1PhoneBg"><img src="images/02-2_page1Phone.jpg" width="100%"></div>
+				<h2>蓋房子 是和土地相遇的故事</h2>
+				<p>
+				群祥開發以自然為師，友善環境，注入風光水綠，讓建築與原生地景融合，
+				留下人與自然互動的空間與元素，回歸生活的靜謐。</br>
+				土地的記憶至真至善；惟有親近土地、擁有自己的土地，才能驗證人生的真價值。</br>
+				人們久居喧囂都市，曾幾何時，童年一望無際的田野、森林、草原久不復見，
+				是出發尋覓一方淨土的時候了。
+				</p>
+			</div><!--page1-->
+			 <div id="page2">
+				<div id="page1PCBg"><img src="images/02-2_page2PC.jpg" width="100%"></div>
+				<div id="openPic">
+        			<img src="images/02-2_openPic1.jpg" width="100%" id="openPicInside">
+        		</div>
+				<h2>循著生活步伐 回歸的墅境</h2>
+				<p>
+				群祥開發以自然為師，友善環境，</br>
+				在獨一無二的地理環境、得天獨厚的自然氛圍，</br>
+				用了三年的時間，種下夢想種子，</br>
+				從與土地相遇，到一起茁壯，讓建築與原生地景融合，</br>
+				更留下人與自然互動的空間與元素。
+				</p>
+				<div id="barPicAll">
+					<div id="barbtn1" class="barbtnClass picSBtn" num="1"><img src="images/02-2_btn1.jpg" height="93" width="140"><h5>峰朗</h5></div><!--
+					--><div id="barbtn2" class="barbtnClass picSBtn" num="2"><img src="images/02-2_btn2.jpg" height="93" width="140"><h5>圓舞曲</h5></div><!--
+					--><div id="barbtn3" class="barbtnClass picSBtn" num="3"><img src="images/02-2_btn3.jpg" height="93" width="140"><h5>天地朗朗</h5></div><!--
+					--><div id="barbtn4" class="barbtnClass picSBtn" num="4"><img src="images/02-2_btn4.jpg" height="93" width="140"><h5>境朗</h5></div><!--
+					--><div id="barbtn5" class="barbtnClass picSBtn" num="5"><img src="images/02-2_btn5.jpg" height="93" width="140"><h5>森美墅</h5></div>
+				</div><!--barPicAll-->
+			</div><!--page2-->
+			<div id="page3">
+				<div id="page1PCBg"><img src="images/02-2_page3PC.jpg" width="100%"></div>
+				<div id="page1PhoneBg"><img src="images/02-2_page3Phone.jpg" width="100%"></div>
+				<h2>承載靈魂的葉舟</h2>
+				<p>
+				暫停片刻，等待靈魂跟上來</br>
+				卸下憂煩，躺上葉片般的船</br>
+				藝術家以抽象的雕刻，化為中庭藝術裡的實質表現</br>
+				讓功能性的「椅子」變化成一種「有機」的存在</br>
+				更融入身處的自然環境與綠意之中
+				</p>
+				<h3>中庭藝術原創　英國皇家雕刻家　<span>貝馬丁</span></h3>
+				<div class="h3Id"><img src="images/02-2_page3ID.png" width="100%"></div>
+			</div><!--page3-->
+			<div id="page4">
+				<div id="page1PCBg"><img src="images/02-2_page4PC.jpg" width="100%"></div>
+				<div id="page1PhoneBg"><img src="images/02-2_page4Phone.jpg" width="100%"></div>
+				<h3>中庭藝術原創　英國皇家雕刻家　<span>貝馬丁</span></h3>
+				<div class="h3Id"><img src="images/02-2_page3ID.png" width="100%"></div>
+				<p>
+				國際知名雕刻大師，英國皇家雕刻家協會會員</br>
+				擅長以豐富多元手法，探索人的內心世界</br>
+				作品陸續被收藏於海納川等知名豪宅公共空間中</br>
+				 　</br>
+				英國東倫敦大學建築藝術系研究所碩士畢</br>
+				1998-2004年 英國劍橋博立皇宮成立個人工作室並擔任雕刻公園籌畫負責人</br>
+				2004年 於日本北海道ENIWA公園參與公共藝術創作</br>
+				2009年 獲三義國際木雕競賽首獎</br>
+				2010年 新竹玻璃工藝博物館「雕塑光影」個展</br>
+				2015年 鶯歌陶瓷博物館「塑土/塑造地球」個展
+				</p>
+			</div><!--page4-->
+		</div><!--BgAll-->
+		<div id="space"></div>
+	</section>
+	<div class="sectionSpace"></div>
+
+	<!-- MENU下 -->
+	<footer>
+		<div id="desc">手作建築 國際別墅 │ 120-150坪 │ 預約專線 <a href="tel:03-365-3650" target="_blank">03-365-3650</a> │ 豐田路225巷1號 │ <span id="mapOpen">MAP</span></div>
+	</footer>
+	<div id="mapPic">
+		<img src="images/mapPic.png" width="100%">
+		<div class="mapOffBox">
+			<div class="mapOffLine1"></div>
+			<div class="mapOffLine2"></div>
+		</div>
+	</div>
+</div>
+<script>
+
+var doSomething = function(openPic) {
+        if (typeof openPic !== 'undefined') {
+            var num = openPic.attr('num');
+            var url = 'images/02-2_openPic' + num + '.jpg';
+            $("#openPic").find('img').attr('src', url);
+            $("#openPic").fadeIn(400);
+        }
+    }
+$(function() {
+	var cache = [];
+    $.preLoadImages = function() {
+    var args_len = arguments.length;
+    for (var i = args_len; i--;) {
+      var cacheImage = document.createElement('img');
+      cacheImage.src = arguments[i];
+      cache.push(cacheImage);
+        }
+    }
+
+    var NN=0;
+	var MOVE=0;
+	$("#arrowL").hide();
+	$(document).on('click','#arrowL',function(){
+		NN-=1;
+		MOVE=NN*1280*-1;
+		$("#BgAll").stop().animate({left:MOVE},1500,"easeOutQuint");
+		$("#arrowR").show();
+		if(NN==0){
+			$("#arrowL").hide();
+		};
+	});
+	$(document).on('click','#arrowR',function(){
+		NN+=1;
+		MOVE=NN*1280*-1;
+		$("#BgAll").stop().animate({left:MOVE},1500,"easeOutQuint");
+		$("#arrowL").show();
+		if(NN==3){
+			$("#arrowR").hide();
+			$("#page4BgPC-1").fadeIn(1500);
+			$("#page4BgPC-2").delay(2500).fadeIn(1500);
+			$("#page4BgPC-3").delay(4000).fadeIn(1500);
+		};
+	});
+
+	$(document).on('click', '.picSBtn', function() {
+            doSomething($(this));
+        });
+	$(document).on('click', '#openPic', function() {
+            $("#openPic").fadeOut(400);
+        });
+
+	var width = $("#main").innerWidth();
+	if(width != 1280){
+		$("#page2 p").html("群祥開發以自然為師，友善環境， 在獨一無二的地理環境、得天獨厚的自然氛圍，用了三年的時間，種下夢想種子，從與土地相遇，到一起茁壯，讓建築與原生地景融合，更留下人與自然互動的空間與元素。");
+		
+		/*$(".picSBtn").each(function(i){
+
+			$("#barbtn"+(i+1)).find('img').attr('src','images/02-1_btn' + (i+1) + 'm.jpg');
+
+			$("#barbtn"+(i+1)).css({"width":"100px", "height":"100px"});
+			$("#barbtn"+(i+1)).find('img').css({"width":"100px", "height":"100px"});
+		});*/
+	}
+
+	$.preLoadImages('images/02-2_openPic1.jpg',
+		'images/02-2_openPic2.jpg',
+		'images/02-2_openPic3.jpg',
+		'images/02-2_openPic4.jpg',
+		'images/02-2_openPic5.jpg');
+});
+
+</script>
+</body>
+</html>

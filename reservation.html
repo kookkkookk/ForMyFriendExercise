@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0" />
+<meta charset="utf-8" />
+<title>直心巷</title>
+<meta name="keywords" content="直心巷">
+<meta name="description" content="手作建築 國際(俬)別墅│120-150坪│豐田路255巷1號│訂房專線:03-365-3650">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script src="js/jquery-ui-1.11.4.min.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery-ui-touch-punch.min.js"></script>
+<!-- <script src="js/mdetect-1021119.js"></script> -->
+<script src="js/main.js"></script>
+
+<link rel="shortcut icon" href="images/icon.ico" />
+<link href="css/main.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('figure');
+document.createElement('aside');
+document.createElement('footer');
+document.createElement('hgroup');
+</script>
+<![endif]-->
+<style>
+section{
+	width: 100%;
+	height: 100%;
+	background-color: #555;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#BgPC{
+	width: 1280px;
+	height: 720px;
+	background-image: url("images/04-1_BgPC.jpg");
+}
+.h1{
+	width: 187px;
+	height: 45px;
+	position: absolute;
+	top: 250px;
+	left: 393px;
+}
+.inputFrom{
+	width: 237px;
+	height: 28px;
+	border: 1px solid #807c1f;
+	padding-left: 5px;
+	margin-left: 5px;
+	font-size: 14px;
+	background: #fefefe;
+	background: -moz-linear-gradient(top, #fefefe 0%, #cecece 100%);
+	background: -webkit-linear-gradient(top, #fefefe 0%,#cecece 100%);
+	background: linear-gradient(to bottom, #fefefe 0%,#cecece 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#cecece',GradientType=0 );
+}
+.contact1{
+	position: absolute;
+	top: 295px;
+	left: 380px;
+}
+.contact2{
+	position: absolute;
+	top: 295px;
+	left: 750px;
+}
+.contact ul{}
+.contact li{
+	font-size: 14px;
+	color: #807c1f;
+	float:left;
+	line-height: 28px;
+}
+.from{
+	width: auto;
+	height: 30px;
+	margin-top: 20px;
+	/*background-color: blue;*/
+}
+.gender{
+	font-size: 14px;
+	color: #807c1f;
+	line-height: 30px;
+}
+.gender input{cursor: pointer;}
+select{
+	width: 244px;
+	text-align: justify;
+	margin-left: 5px;
+
+	background: #fefefe;
+	padding: 5px;
+	font-size: 14px;
+	line-height: 1;
+	height: 30px;
+	/*-webkit-appearance: none;*/
+	font-family: "微軟正黑體";
+	color: #a0a0a0;
+}
+option{
+	text-align: center;
+	display: block;
+	color: #000;
+}
+.bgLine{
+	position: absolute;
+	top: 470px;
+	left: 400px;
+	width: 655px;
+	height: 2px;
+	background-image: url("images/04-1_bgLine.png");
+}
+.contact3{
+	position: absolute;
+	top: 495px;
+	right: 215px;
+	/*background-color: #753;*/
+}
+.safeCodeBox{
+	width: auto;
+	height: 30px;
+	/*background-color: blue;*/
+	display: inline-block;
+}
+.safeCodePic{
+	width: 80px;
+	height: 30px;
+	background-image: url("images/04-1_safeCode1.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	float: left;
+}
+.safeCodeDiv{
+	width: 40px;
+	height: 30px;
+	display: inline-block;
+}
+.safeCodeDiv input{
+	width: 40px;
+	height: 27px;
+	border: 1px solid #807c1f;
+	padding-left: 5px;
+	margin-left: 5px;
+	line-height: 27px;
+	font-size: 14px;
+	background: #fefefe;
+	background: -moz-linear-gradient(top, #fefefe 0%, #cecece 100%);
+	background: -webkit-linear-gradient(top, #fefefe 0%,#cecece 100%);
+	background: linear-gradient(to bottom, #fefefe 0%,#cecece 100%);
+}
+.okBtn{
+	width: auto;
+	height: 30px;
+	/*background-color: yellow;*/
+	display: inline-block;
+}
+.resetBtn{
+	margin-left: 25px;
+	float: left;
+}
+.resetBtn input{
+	width: 90px;
+	height: 30px;
+	background-color: #fafafa;
+	border: 1px solid #807c1f;
+	cursor: pointer;
+}
+.checkBtn{
+	margin-left: 5px;
+	display: inline-block;
+}
+.checkBtn input{
+	width: 91px;
+	height: 31px;
+	background-color: #8b8623;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+.contact3>h1{
+	color: #1b1b1b;
+	font-weight: bold;
+	font-size: 13.5px;
+	line-height: 30px;
+}
+.contact3>h2{display: none;}
+
+
+
+.sectionSpace{display: none;}
+@media screen and (max-width: 736px) {
+	section{
+		/*max-width:320px;*/
+		height: auto;
+		background-color: #f9f9f9;
+		padding-top:40px;
+	}
+	.sectionSpace{display: block;}
+	#BgPC{
+		width: 100%;
+		height: auto;
+		background-image: url("images/0_bg.jpg");
+		background-size: cover;
+		background-position: 100% 50%;
+		padding-top: 20px;
+	}
+	.h1{
+		width: 70%;
+		height: auto;
+		position: static;
+		margin-left: 5%;
+	}
+	.contact1, .contact2, .contact3{
+		position: static;
+	}
+	.bgLine{display: none;}
+	.from{
+		margin-top: 0px;
+		margin-bottom: 35px;
+	}
+	.gender{
+		padding-top: 10px;
+		margin-bottom: 10px;
+	}
+	.inputFrom, select{
+		width: 85%;
+	}
+
+	.contact li{
+		float: none;
+	}
+	.contact1, .contact2, .contact3{
+		margin-left: 10px;
+	}
+	.contact3{
+		padding-bottom: 30px;
+	}
+	.safeCodeBox, .okBtn{
+		margin-top: 15px;
+	}
+	.safeCodeBox{
+		margin-right: 15px;
+	}
+	.resetBtn{
+		margin-left: 0px;
+	}
+	.contact3>h1{
+		display: none;
+	}
+	.contact3>h2{
+		padding-top: 5px;
+		font-size: 12px;
+		line-height: 16px;
+		color: #1b1b1b;
+		font-weight: bold;
+		display: block;
+	}
+
+	
+
+
+
+
+
+
+
+
+}
+</style>
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+<div id="loading"><img src="images/loading.gif"></div>
+<div id="main">
+	<!-- MENU上 -->
+	<header>
+		<div id="menuLogo" title="回首頁"><img src="images/indexMenuLogo.png" width="100%"></div>
+		<ul>
+			<li id="btn1">直心八德
+				<ul id="sbtn1" class="sbtnUl">
+					<li id="btn1-1" class="sbtn">墅的發生</li>
+					<li id="btn1-2" class="sbtn">神隱交通</li>
+					<li id="btn1-3" class="sbtn">生活片段</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn2">植心建築
+				<ul id="sbtn2" class="sbtnUl">
+					<li id="btn2-1" class="sbtn">張景堯築跡</li>
+					<li id="btn2-2" class="sbtn">群祥藝術家</li>
+					<li id="btn2-3" class="sbtn">國際俬別墅</li>
+					<!-- <li id="btn2-4" class="sbtn">反璞歸真趣</li> -->
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn3">質心空間
+				<ul id="sbtn3" class="sbtnUl">
+					<!-- <li id="btn3-1" class="sbtn">有故事的家</li> -->
+					<li id="btn3-2" class="sbtn">內在的風景</li>
+					<li id="btn3-3" class="sbtn">智慧型建築</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn4">預約賞屋
+				<!-- <ul id="sbtn4" class="sbtnUl">
+					<li id="btn4-1" class="sbtn">線上預約</li>
+					<li id="btn4-2" class="sbtn">交通位置圖</li>
+				</ul> -->
+			</li>
+		</ul>
+		<div id="smallBtn">
+			<div id="smallBtnLine1"></div>
+			<div id="smallBtnLine2"></div>
+			<div id="smallBtnLine3"></div>
+		</div>
+	</header>
+	<div id="smallMenu">
+		<ul>
+
+			<li id="smallbtn1" class="smallbtn">直心八德
+				<ul>
+					<li id="smallbtn1-1" class="smallbtn">墅的發生</li>
+					<li id="smallbtn1-2" class="smallbtn">神隱交通</li>
+					<li id="smallbtn1-3" class="smallbtn">生活片段</li>
+				</ul>
+			</li>
+
+			<li id="smallbtn2" class="smallbtn">植心建築
+				<ul>
+					<li id="smallbtn2-1" class="smallbtn">張景堯築跡</li>
+					<li id="smallbtn2-2" class="smallbtn">群祥藝術家</li>
+					<li id="smallbtn2-3" class="smallbtn">國際俬別墅</li>
+					<!-- <li id="smallbtn2-4" class="smallbtn">反璞歸真趣</li> -->
+				</ul>
+			</li>
+
+			<li id="smallbtn3" class="smallbtn">質心空間
+				<ul>
+					<!-- <li id="smallbtn3-1" class="smallbtn">有故事的家</li> -->
+					<li id="smallbtn3-2" class="smallbtn">內在的風景</li>
+					<li id="smallbtn3-3" class="smallbtn">智慧型建築</li>
+				</ul>
+			</li>
+
+			<li id="smallbtn4" class="smallbtn">預約賞屋
+				<!-- <ul>
+					<li id="smallbtn4-1" class="smallbtn">線上預約</li>
+					<li id="smallbtn4-2" class="smallbtn">交通位置圖</li>
+				</ul> -->
+			</li>
+
+		</ul>
+	</div>
+
+	<!-- 內容 -->
+	<section>
+		<div id="BgPC">
+			<div class="h1"><img src="images/04-1_h1.png" width="100%"></div>
+			<div class="contact1 contact">
+				<div class="nameId from">
+					<ul>
+						<li>※您的姓名</li>
+						<li><input type="text" id="name" class="inputFrom" /></li>
+					</ul>
+				</div>
+				<div class="phoneNum from">
+					<ul>
+						<li>※行動電話</li>
+						<li><input type="tel" id="phone" class="inputFrom" /></li>
+					</ul>
+				</div>
+				<div class="emailId from">
+					<ul>
+						<li style="padding-left:12px">電子郵件</li>
+						<li><input type="email" id="email" class="inputFrom" /></li>
+					</ul>
+				</div>
+
+			</div> 
+			<div class="contact2 contact">
+				<div class="gender from">
+					先生<input type="radio" value="man" name="gender">
+					女士<input type="radio" value="woman" name="gender">
+				</div>
+				<div class="homeNum from">
+					<ul>
+						<li>連絡電話</li>
+						<li><input type="tel" id="home" class="inputFrom" /></li>
+					</ul>
+				</div>
+				<div class="timeId from">
+					<ul>
+						<li>聯絡時段</li>
+						<li>
+							<select id="selectTime">
+		                    	<option value="0">請選擇聯絡時段</option>
+		                    	<option value="1">09:00~12:00</option>
+		                    	<option value="2">12:00~14:00</option>
+		                    	<option value="3">14:00~18:00</option>
+		                    	<option value="4">18:00~21:00</option>
+		                    </select>
+						</li>
+					</ul>
+				</div>           
+			</div>
+			<div class="bgLine"></div>
+			<div class="contact3">
+
+				<div class="safeCodeBox">
+					<div class="safeCodePic"></div>
+					<div class="safeCodeDiv">
+						<input type="text" id="safeCodeInput">
+					</div>
+				</div>
+				
+				<div class="okBtn">
+					<div class="resetBtn">
+						<input id="reset_btn" type="reset" value="清除重填" />
+					</div>
+					<div class="checkBtn">
+						<input id="submit_btn" type="button" value="確認送出" />
+					</div>
+				</div>
+				
+
+				<h1>為提供快速完善的服務，請確實填寫資料（※為必填欄位）</h1>
+				<h2>為提供快速完善的服務，請確實填寫資料</br>（※為必填欄位）</h2>
+			</div>
+		</div>
+	</section>
+	<div class="sectionSpace"></div>
+
+	<!-- MENU下 -->
+	<footer>
+		<div id="desc">手作建築 國際別墅 │ 120-150坪 │ 預約專線 <a href="tel:03-365-3650" target="_blank">03-365-3650</a> │ 豐田路225巷1號 │ <span id="mapOpen">MAP</span></div>
+	</footer>
+	<div id="mapPic">
+		<img src="images/mapPic.png" width="100%">
+		<div class="mapOffBox">
+			<div class="mapOffLine1"></div>
+			<div class="mapOffLine2"></div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+
+	$("#reset_btn").click(function () {
+		$('.inputFrom').val("");
+
+		$("input[type=radio]").each(function () {
+   			$("input[type=radio]").attr("checked", false);
+		});
+
+		$("#selectTime").each(function(){
+			$(this).find("option").each(function (Idx) {
+				if(Idx==0){
+					$(this).attr("selected", true);
+				}
+			});
+		}); 
+
+	});
+	var EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[a-zA-Z0-9.-]+.[A-Za-z]$/;
+	$("#submit_btn").click(function () {
+		var name = $('#name').val();
+        var phoneNumber = $('#phone').val();
+        var email = $('#email').val();
+        var gender = $('input[name=gender]:checked').val();
+        var homeNumber = $('#home').val();
+        var selectTime =  $("#selectTime").find('option:selected').text();
+
+        var errorArr = [];
+        if (name == "") {
+            errorArr.push("請填寫姓名欄位");            
+        };
+        if (phoneNumber == "") {
+            errorArr.push("請填寫手機號碼");            
+        }; 
+        if( !EMAIL_PATTERN.test(email) ) {
+            errorArr.push("無效的e-mail格式");            
+        };
+
+        if (errorArr.length != 0) {
+            var msg = errorArr.toString().replace(/,/g , "\n");
+            alert(msg);
+            return;
+        };
+		console.log('姓名:', name);
+		console.log('手機號碼:', phoneNumber);
+		console.log('e-mail:', email);
+		console.log('性別:', gender);
+		console.log('電話號碼:', email);
+		console.log('聯絡時段:', selectTime);
+		alert("我們已收到您訊息，會盡速與您聯繫，謝謝。")
+        return false;
+	});
+
+});
+</script>
+</body>
+</html>

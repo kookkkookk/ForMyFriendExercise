@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0" />
+<meta charset="utf-8" />
+<title>直心巷</title>
+<meta name="keywords" content="直心巷">
+<meta name="description" content="手作建築 國際(俬)別墅│120-150坪│豐田路255巷1號│訂房專線:03-365-3650">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/mdetect-1021119.js"></script>
+<script src="js/main.js"></script>
+
+<link rel="shortcut icon" href="images/icon.ico" />
+<link href="css/main.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('figure');
+document.createElement('aside');
+document.createElement('footer');
+document.createElement('hgroup');
+</script>
+<![endif]-->
+<style>
+body,html {background-color: #fff;}
+section{
+	width: 100%;
+	height: 100%;
+}
+#Bg{
+	width: 1280px;
+	height: 720px;
+}
+#Bg1{display: none;z-index: 1;position: absolute;}
+#Bg2{display: none;z-index: 2;position: absolute;}
+#Bg3{display: none;z-index: 3;position: absolute;}
+#Bg4{display: none;z-index: 4;position: absolute;}
+section>ul{
+	display: none;
+	z-index: 5;
+	position: absolute;
+	bottom: 130px;
+	right: 110px;
+}
+section>ul>li{
+	float: left;
+	margin-right: 25px;
+	color: #fff;
+}
+section>ul>li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 22px;
+	font-weight: bold;
+	transition:0.5s all ease;
+}
+section>ul>li span{
+	font-size: 12px;
+	font-weight: lighter;
+}
+/*section>ul>li a:hover{
+	color: #000;
+}*/
+#SmallMenu{display: none;}
+#comingsoon{
+	position: absolute;
+	bottom: 170px;
+	right: 437px;
+	font-family: "Century Gothic";
+	font-size: 24px;
+	font-weight: lighter;
+	color: #b81c22;
+	z-index: 5;
+}
+
+@media screen and (max-width: 667px) {
+	body,html {background-color: #f9f9f9;}
+	section{
+		min-width:320px;
+		height: auto;
+	}
+	header{top: 0px;}
+	#Bg{
+		width: 100%;
+		height: auto;
+	}
+	#Bg1{position: static;}
+	#Bg2{position: absolute;top: 0px;}
+	#Bg3{position: absolute;top: 0px;}
+	#Bg4{position: absolute;top: 0px;}
+
+	section>ul{
+		display: none;
+	}
+	#SmallMenu{
+		display: block;
+		width: 100%;
+		height: 145px;
+		background-color: #d4d4d4;
+	}
+	#SmallMenu ul{
+		border-top: 2px solid #333;
+	}
+	#SmallMenu li{
+		width: 100%;
+		height: 35px;
+		border-bottom: 1px solid #000;
+		text-align: center;
+		line-height: 2em;
+
+	}
+	#SmallMenu a{
+		text-decoration: none;
+		font-size: 16px;
+		color: #111;
+		font-weight: bold;
+	}
+	#SmallMenu li span{
+		font-size: 10px;
+		font-weight: lighter;
+	}
+}
+</style>
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+<div id="loading"><img src="images/loading.gif"></div>
+<div id="main">
+	<!-- MENU上 -->
+	<header>
+		<div id="menuLogo" title="回首頁"><img src="images/indexMenuLogo.png" width="100%"></div>
+		<ul>
+			<li id="btn1">直心八德
+				<ul id="sbtn1" class="sbtnUl">
+					<li id="btn1-1" class="sbtn">桃源悠境</li>
+					<li id="btn1-2" class="sbtn">神隱動線</li>
+					<li id="btn1-3" class="sbtn">俬房散策</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn2">植心建築
+				<ul id="sbtn2" class="sbtnUl">
+					<li id="btn2-1" class="sbtn">張景堯築跡</li>
+					<li id="btn2-2" class="sbtn">群祥藝術家</li>
+					<li id="btn2-3" class="sbtn">國際俬別墅</li>
+					<li id="btn2-4" class="sbtn">反璞歸真趣</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn3">質心空間
+				<ul id="sbtn3" class="sbtnUl">
+					<li id="btn3-1" class="sbtn">有故事的家</li>
+					<li id="btn3-2" class="sbtn">養生療癒系</li>
+					<li id="btn3-3" class="sbtn">智慧型建築</li>
+				</ul>
+			</li>
+
+			<li id="nobtn">|</li>
+
+			<li id="btn4">預約賞屋
+				<ul id="sbtn4" class="sbtnUl">
+					<li id="btn4-1" class="sbtn">線上預約</li>
+					<li id="btn4-2" class="sbtn">交通位置圖</li>
+				</ul>
+			</li>
+		</ul>
+		<div id="smallBtn">
+			<div id="smallBtnLine1"></div>
+			<div id="smallBtnLine2"></div>
+			<div id="smallBtnLine3"></div>
+		</div>
+	</header>
+
+	<!-- 內容 -->
+	<section>
+		<div id="Bg">
+			<div id="Bg1"><img src="images/home_bg1.jpg" width="100%"></div>
+			<div id="Bg2"><img src="images/home_bg2.jpg" width="100%"></div>
+			<div id="Bg3"><img src="images/home_bg3.jpg" width="100%"></div>
+			<div id="Bg4"><img src="images/home_bg4.jpg" width="100%"></div>
+		</div>
+
+		<ul>
+			<li><a href="traffic1.html">直心八德 <span>TRAFFIC</span></a></li>
+			<li>|</li>
+			<li><a href="building1.html">植心建築 <span>BUILDING</span></a></li>
+			<li>|</li>
+			<li><a href="space2.html">質心空間 <span>SPACE</span></a></li>
+			<li>|</li>
+			<li><a href="reservation.html">預約賞屋 <span>RESERVATION</span></a></li>
+		</ul>
+
+		<div id="SmallMenu">
+			<ul>
+				<a href="traffic1.html"><li>直心八德 <span>TRAFFIC</span></li></a>
+				<a href="building1.html"><li>植心建築 <span>BUILDING</span></li></a>
+				<a href="space2.html"><li>質心空間 <span>SPACE</span></li></a>
+				<a href="reservation.html"><li>預約賞屋 <span>RESERVATION</span></li></a>
+			</ul>
+		</div>
+	</section>
+
+	<!-- MENU下 -->
+	<footer>
+		<div id="desc">手作建築 國際別墅 │ 120-150坪 │ 預約專線 <a href="tel:03-365-3650" target="_blank">03-365-3650</a> │ 豐田路225巷1號 │ <span id="mapOpen">MAP</span></div>
+	</footer>
+	<div id="mapPic">
+		<img src="images/mapPic.png" width="100%">
+		<div class="mapOffBox">
+			<div class="mapOffLine1"></div>
+			<div class="mapOffLine2"></div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+	$("header").hide();
+	$("#Bg1").fadeIn(1500);
+	$("#Bg2").delay(2500).fadeIn(1500);
+	$("#Bg3").delay(5000).fadeIn(1500);
+	$("#Bg4").delay(7500).fadeIn(1500);
+
+	var width = $("#Bg").innerWidth();
+	if (width == 1280) {
+		$("section ul").delay(7500).fadeIn(1500);
+	}
+
+});
+</script>
+
+
+
+</body>
+</html>
